@@ -13,7 +13,7 @@ export default function TokenProvider({ children }) {
 				setToken(JSON.parse(tokenObject))
 			}
 		}
-	}, [])
+	}, [token])
 
 	return <TokenContext.Provider value={{token, setToken}}>
 		{children}

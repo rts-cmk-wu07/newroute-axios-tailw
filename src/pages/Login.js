@@ -6,7 +6,7 @@ import useCookie from "react-use-cookie"
 
 export default function Login() {
 	const [isLoading, setIsLoading] = useState(false)
-	const [tokenCookie, setTokenCookie] = useCookie("trainer-cookie", undefined)
+	const [, setTokenCookie] = useCookie("trainer-cookie", undefined)
 	const { token, setToken } = useContext(TokenContext)
 	const navigate = useNavigate()
 
@@ -45,7 +45,7 @@ export default function Login() {
 		if (token) {
 			navigate("/profile")
 		}
-	}, [token])
+	}, [token, navigate])
 	
 	return (
 		<>
