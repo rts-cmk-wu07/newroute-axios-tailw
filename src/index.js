@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './components/Layout';
-import ProtectedLayout from './components/ProtectedLayout';
+import ProtectedRoute from './components/ProtectedRoute';
 import TokenProvider from './components/TokenProvider';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -20,16 +20,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login/>
-      }
-    ]
-  },
-  {
-    path: "/s",
-    element: <ProtectedLayout/>,
-    children: [
+      },
       {
-        path: "/profile",
-        element: <Profile/>
+        path: "profile",
+        element: <ProtectedRoute><Profile/></ProtectedRoute>,
       }
     ]
   }

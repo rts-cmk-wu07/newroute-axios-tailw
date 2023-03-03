@@ -1,11 +1,13 @@
 import axios from "axios"
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import { TokenContext } from "../components/TokenProvider"
 import { useNavigate } from "react-router-dom"
+import useCookie from "react-use-cookie"
 
 export default function Login() {
 	const [isLoading, setIsLoading] = useState(false)
-	const { setToken } = useContext(TokenContext)
+	const [tokenCookie, setTokenCookie] = useCookie("trainer-cookie", undefined)
+	const { token, setToken } = useContext(TokenContext)
 	const navigate = useNavigate()
 
 	async function handleSubmit(event) {
@@ -19,8 +21,13 @@ export default function Login() {
 			})
 
 			if (response.status === 200) {
+				const milliseconds = response.data.validUntil - Date.now()
+				const validFor = milliseconds / (1000 * 60 * 60 * 24)
+				setTokenCookie(JSON.stringify(response.data), {
+					days: validFor,
+					SameSite: "Strict"
+				})
 				setToken(response.data)
-				navigate("/s/profile")
 			}
 		} catch (error) {
 			
@@ -28,6 +35,12 @@ export default function Login() {
 			setIsLoading(false)
 		}
 	}
+
+	useEffect(function() {
+		if (token) {
+			navigate("/profile")
+		}
+	}, [token])
 	
 	return (
 		<>
