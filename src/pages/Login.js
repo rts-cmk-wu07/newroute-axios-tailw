@@ -21,12 +21,17 @@ export default function Login() {
 			})
 
 			if (response.status === 200) {
-				const milliseconds = response.data.validUntil - Date.now()
-				const validFor = milliseconds / (1000 * 60 * 60 * 24)
-				setTokenCookie(JSON.stringify(response.data), {
-					days: validFor,
-					SameSite: "Strict"
-				})
+				if (event.target.remember.checked) {
+					const milliseconds = response.data.validUntil - Date.now()
+					const validFor = milliseconds / (1000 * 60 * 60 * 24)
+					setTokenCookie(JSON.stringify(response.data), {
+						days: validFor,
+						SameSite: "Strict"
+					})
+				} else {
+					// session cookie
+				}
+
 				setToken(response.data)
 			}
 		} catch (error) {
@@ -45,7 +50,7 @@ export default function Login() {
 	return (
 		<>
 			<h1>Log in</h1>
-			<form onSubmit={handleSubmit}>
+			<form onSubmit={handleSubmit} style={{display:"flex",flexDirection:"column"}}>
 				<label>
 					Username
 					<input type="text" name="username" />
@@ -53,6 +58,10 @@ export default function Login() {
 				<label>
 					Password
 					<input type="password" name="password" />
+				</label>
+				<label>
+					<input type="checkbox" name="remember" />
+					Remember me
 				</label>
 				<button type="submit">Log in</button>
 				{isLoading && <p>Loading...</p>}
