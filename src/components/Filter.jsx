@@ -42,15 +42,17 @@ const Filter = () => {
       <input onChange={handleSearch} type="text" />
       <div>
         <></>
-        {showResults && (
+        {showResults ? (
           <>
-            {searchResults.map((item, index) => {
+            {searchResults.map((item, index) => (
               <article key={index}>
                 <h2>{item.title}</h2>
                 <p>{item.desc}</p>
-              </article>;
-            })}
+              </article>
+            ))}
           </>
+        ) : (
+          <p>prut</p>
         )}
       </div>
     </div>
