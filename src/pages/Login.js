@@ -1,11 +1,10 @@
 import axios from "axios";
 import { useState, useContext, useEffect } from "react";
-import { TokenContext } from "../components/TokenProvider";
+import { TokenContext } from "../contexts/TokenProvider";
 import { useNavigate } from "react-router-dom";
 import useCookie from "react-use-cookie";
 
 export default function Login() {
-
   const [isLoading, setIsLoading] = useState(false);
   const [tokenCookie, setTokenCookie] = useCookie("trainer-cookie", undefined);
   const { token, setToken } = useContext(TokenContext);

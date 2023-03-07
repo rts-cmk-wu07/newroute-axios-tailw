@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import { TokenContext } from "./TokenProvider";
+import { TokenContext } from "../contexts/TokenProvider";
 import { setCookie } from "react-use-cookie";
 
 export default function Layout() {
@@ -32,5 +32,4 @@ export default function Layout() {
       </main>
     </>
   );
-
 }

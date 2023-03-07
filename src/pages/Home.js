@@ -1,7 +1,8 @@
 import { useState, useEffect, useContext } from "react";
 import axios from "axios";
-import { TokenContext } from "../components/TokenProvider";
+import { TokenContext } from "../contexts/TokenProvider";
 import { useNavigate } from "react-router-dom";
+import Filter from "../components/Filter";
 
 export default function Home() {
   const [classes, setClasses] = useState();
@@ -48,6 +49,7 @@ export default function Home() {
           ))}
         {error && <p>{error.message}</p>}
       </section>
+      <Filter />
     </>
   );
 }
