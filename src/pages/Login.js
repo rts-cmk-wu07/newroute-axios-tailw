@@ -5,8 +5,9 @@ import { useNavigate } from "react-router-dom";
 import useCookie from "react-use-cookie";
 
 export default function Login() {
+
   const [isLoading, setIsLoading] = useState(false);
-  const [, setTokenCookie] = useCookie("trainer-cookie", undefined);
+  const [tokenCookie, setTokenCookie] = useCookie("trainer-cookie", undefined);
   const { token, setToken } = useContext(TokenContext);
   const navigate = useNavigate();
 
@@ -28,6 +29,8 @@ export default function Login() {
             days: validFor,
             SameSite: "Strict",
           });
+
+          console.log("tokenCookie", tokenCookie);
         } else {
           //session cookie??
         }

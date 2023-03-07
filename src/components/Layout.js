@@ -18,7 +18,8 @@ export default function Layout() {
       <header>
         <nav>
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/profile">Profile</NavLink>
+          {token && <NavLink to="/profile">Profile</NavLink>}
+
           {token ? (
             <button onClick={handleLogout}>Log out</button>
           ) : (
@@ -31,4 +32,5 @@ export default function Layout() {
       </main>
     </>
   );
+
 }
