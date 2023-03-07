@@ -9,10 +9,10 @@ Brug conetnt fra opgave beskr (hvad skal denne app kunne)
 
 ## Tech-stack
 
-- **React** Hvad er react
+- **React** Hvad er react  
   Jeg har fordi stor community med mange pakker, omfattende dokumentatio, pakker, meget efterspurgt på arbejdsmarkedet
 
-- **Tailwind** Hvad er tailwind
+- **Tailwind** Hvad er tailwind  
   hurtigt at arbejde med end css - kode i samme komponenter, stanardiseret, overskueligt og effektivt
 
 ## perspektivering af mit stack ift andre muligheder (de store ting i vores app)
