@@ -1,6 +1,5 @@
 # Dokumentation for Appen
 
-
 Svendeprøve for Simon Nyholm Sørensen  
 Marts 2023
 
@@ -8,18 +7,15 @@ Marts 2023
 
 Brug indholdet fra opgavebeskrivelsen. (hvad skal denne app kunne).
 
-
 ## Tech-stack
 
 - **React** Hvad er react  
   Jeg har fordi stor community med mange pakker, omfattende dokumentatio, pakker, meget efterspurgt på arbejdsmarkedet
 
 - **Tailwind** Hvad er tailwind  
-  hurtigt at arbejde med end css - kode i samme komponenter, stanardiseret, overskueligt og effektivt
-
+  hurtigt at arbejde med end css - kode i samme komponenter, standardiseret, overskueligt og effektivt
 
 -**Axios**
-
 
 ## perspektivering af mit stack ift andre muligheder (de store ting i vores app)
 

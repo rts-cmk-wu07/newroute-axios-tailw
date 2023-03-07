@@ -8,6 +8,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import ClassDetails from "./pages/ClassDetails";
+import "./index.css";
 
 const router = createBrowserRouter([
   {

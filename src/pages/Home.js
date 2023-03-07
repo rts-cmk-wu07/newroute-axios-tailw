@@ -34,23 +34,20 @@ export default function Home() {
 
   return (
     <>
-      <h1>Home</h1>
+      <h1 class="text-2xl">Home</h1>
       {token && <h4>Velkommen bruger</h4>}
       <section>
         {isLoading && <p>..loading</p>}
 
-        {classes?.map((item, index) => (
-          <article onClick={() => navigate(`/classdetails/${item.id}`)}>
-            <h2>{item.className}</h2>
-            <p>{item.classDescription}</p>
-          </article>
-        ))}
+        {classes &&
+          classes?.map((item, index) => (
+            <article onClick={() => navigate(`/classdetails/${item.id}`)}>
+              <h2>{item.className}</h2>
+              <p>{item.classDescription}</p>
+            </article>
+          ))}
         {error && <p>{error.message}</p>}
       </section>
     </>
   );
 }
-
-/*
-
-*/
