@@ -1,11 +1,11 @@
 # Dokumentation for Appen
 
-Svendeprøve Simon Nyholm  
-Forår 2023
+Svendeprøve for Simon Nyholm Sørensen  
+Marts 2023
 
 ## Denne app
 
-Brug conetnt fra opgave beskr (hvad skal denne app kunne)
+Brug indholdet fra opgavebeskrivelsen. (hvad skal denne app kunne).
 
 ## Tech-stack
 
@@ -14,6 +14,8 @@ Brug conetnt fra opgave beskr (hvad skal denne app kunne)
 
 - **Tailwind** Hvad er tailwind  
   hurtigt at arbejde med end css - kode i samme komponenter, stanardiseret, overskueligt og effektivt
+
+-**Axios**
 
 ## perspektivering af mit stack ift andre muligheder (de store ting i vores app)
 
